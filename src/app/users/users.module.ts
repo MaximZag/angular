@@ -9,6 +9,7 @@ import {UserdetailsComponent} from "./users-components/userdetails/userdetails.c
 import {UserService} from "./user-services/user.service";
 import {UsersResolver} from "./user-services/users.resolver";
 import {UserResolver} from "./user-services/user.resolver";
+import {DeactivatorGuard} from "./user-services/deactivator.guard";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {UserResolver} from "./user-services/user.resolver";
   providers: [
     UserService,
     UsersResolver,
-    UserResolver
+    UserResolver,
+    DeactivatorGuard
   ]
 })
 export class UsersModule {
