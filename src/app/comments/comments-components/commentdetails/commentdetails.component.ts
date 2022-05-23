@@ -12,12 +12,12 @@ export class CommentdetailsComponent implements OnInit {
   commentdet: IComment
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
-  }
-
-  ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id}) => {
       this.commentdet = this.router.getCurrentNavigation()?.extras?.state?.['comment'] as IComment;
     })
+  }
+
+  ngOnInit(): void {
   }
 
 }

@@ -13,12 +13,12 @@ export class PostdetailsComponent implements OnInit {
   postdet: IPost
 
   constructor(private activatedRoute: ActivatedRoute, private router:Router) {
-  }
-
-  ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id}) => {
       this.postdet = this.router.getCurrentNavigation()?.extras?.state?.['post'] as IPost
     })
+  }
+
+  ngOnInit(): void {
   }
 
 }
