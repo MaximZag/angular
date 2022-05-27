@@ -1,4 +1,3 @@
-export * from './user.interface'
-export * from './post.interface';
-export * from './comment.interface';
+export * from './genre.interface'
+export * from './movie.interface';
 
