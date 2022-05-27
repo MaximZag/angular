@@ -1,0 +1,26 @@
+.header{
+  height: 100px;
+  background-color: darkslateblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+.movies{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 110px;
+  gap: 10px;
+  height: calc(100vh - 160px);
+  overflow: hidden;
+  overflow-y: auto;
+  margin-left: 5%;
+}
+
+.movies::-webkit-scrollbar {
+  width: 0;
+}
