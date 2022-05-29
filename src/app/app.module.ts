@@ -5,10 +5,11 @@ import {RouterModule} from "@angular/router";
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home/home.component';
-import { GenresComponent } from './components/genres/genres.component';
-import { MoviesComponent } from './components/movies/movies.component';
-import { MovieComponent } from './components/movie/movie.component';
-import { GenreComponent } from './components/genre/genre.component';
+import {GenresComponent} from './components/genres/genres.component';
+import {MoviesComponent} from './components/movies/movies.component';
+import {MovieComponent} from './components/movie/movie.component';
+import {GenreComponent} from './components/genre/genre.component';
+import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -17,19 +18,16 @@ import { GenreComponent } from './components/genre/genre.component';
     GenresComponent,
     MoviesComponent,
     MovieComponent,
-    GenreComponent
+    GenreComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      // {path: '', component: HomeComponent},
-      {
-        path: 'movies', component: MoviesComponent,
-        // children: [
-        //   {path: 'userdetails/:id', component: UserdetailsComponent}
-        // ]
-      },
+      {path: '', component: HomeComponent},
+      { path: 'movies', component: MoviesComponent},
+      { path: 'movies/:id', component: MovieDetailsComponent}
     ])
   ],
   providers: [],

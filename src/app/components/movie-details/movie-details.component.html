@@ -1,0 +1,37 @@
+
+
+
+
+<div [style.background-image]="'url(https://image.tmdb.org/t/p/original'+movie?.images.backdrops[0].file_path+'?api_key=e77bd741cd0b705c1841df139925cbcd)'"
+     class="backimage">
+
+  <div class="general">
+    <div class="left">
+      <img src="https://image.tmdb.org/t/p/w500{{movie?.poster_path}}?api_key=e77bd741cd0b705c1841df139925cbcd"
+           alt=""/>
+    </div>
+    <div class="right">
+      <h1>{{movie?.title}}</h1>
+      <div>Genres</div>
+      <div *ngFor="let genre of movie?.genres">{{genre.name}}</div>
+      <div>{{movie?.overview}}</div>
+      <div>Rating:{{movie?.popularity}}</div>
+      <div>Release date:{{movie?.release_date}}</div>
+    </div>
+  </div>
+  <div class="h2"><h2>ACTORS</h2></div>
+  <!--<div class="actors">-->
+  <!--  {{movie.casts && movie.casts.cast.filter(actor => actor.profile_path !== null).map(actor => <Actor-->
+  <!--                    key={actor.cast_id} actor={actor}/>)}}-->
+  <!--</div>-->
+  <div class="h2"><h2>IMAGES</h2></div>
+  <div class="images">
+    <div *ngFor="let image of movie?.images.backdrops">
+      <img src="https://image.tmdb.org/t/p/w300{{image.file_path}}?api_key=e77bd741cd0b705c1841df139925cbcd"
+           alt=""/>
+    </div>
+  </div>
+  <!--<Link to={'/movies'}>-->
+  <!--<button className={'backhome'} onClick={() => back(pageId)}>Back to All Movies</button>-->
+  <!--</Link>-->
+</div>
