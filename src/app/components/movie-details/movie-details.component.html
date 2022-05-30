@@ -2,7 +2,7 @@
 
 
 
-<div [style.background-image]="'url(https://image.tmdb.org/t/p/original'+movie?.images.backdrops[0].file_path+'?api_key=e77bd741cd0b705c1841df139925cbcd)'"
+<div *ngIf="movie" [style.background-image]="'url(https://image.tmdb.org/t/p/original'+movie.images.backdrops[0].file_path+'?api_key=e77bd741cd0b705c1841df139925cbcd)'"
      class="backimage">
 
   <div class="general">

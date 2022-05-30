@@ -1,4 +1,9 @@
-<div class="genres">
-<app-genre *ngFor="let genre of genres?.genres" [genre]="genre"></app-genre>
+<div class="top">
+  <div class="top-left">
+    <button class="allbutton" (click)="allFunction()">All</button>
+  </div>
+  <div class="genres">
+    <app-genre *ngFor="let genre of genres?.genres" [genre]="genre"></app-genre>
+  </div>
 </div>
 
