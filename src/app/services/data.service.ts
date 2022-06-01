@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {IData} from "../interfaces";
 
@@ -7,7 +7,8 @@ import {IData} from "../interfaces";
 })
 export class DataService {
 
-  storage = new BehaviorSubject<IData>({id: '', page: ''});
+  storage = new BehaviorSubject<IData>({pageId: 1, id: ''});
 
-  constructor() { }
+  constructor() {
+  }
 }

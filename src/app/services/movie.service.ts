@@ -17,8 +17,8 @@ export class MovieService {
     return this.httpClient.get<IGenre[]>(urls.genres)
   }
 
-  getAllMovies(id:string):Observable<IMovie[]>{
-    return this.httpClient.get<IMovie[]>(urls.movies + `&with_genres=${id}`)
+  getAllMovies(page:number, id:string):Observable<IMovie[]>{
+    return this.httpClient.get<IMovie[]>(urls.movies + `&page=${page}&with_genres=${id}`)
   }
 
   // getAllMoviesByGenre(id:string):Observable<IMovie[]>{

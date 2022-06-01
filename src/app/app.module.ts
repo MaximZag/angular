@@ -26,8 +26,8 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      { path: 'movies', component: MoviesComponent},
-      { path: 'movies/:id', component: MovieDetailsComponent}
+      {path: 'movies', component: MoviesComponent},
+      {path: 'movies/:id', component: MovieDetailsComponent}
     ])
   ],
   providers: [],

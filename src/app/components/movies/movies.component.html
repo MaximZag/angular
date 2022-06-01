@@ -1,11 +1,24 @@
 <div class="container">
 
-<div class="header">
-  <app-genres></app-genres>
-</div>
+  <div class="header">
+    <app-genres></app-genres>
+  </div>
 
-<div class="movies">
-<app-movie *ngFor="let movie of movies?.results" [movie]="movie"></app-movie>
-</div>
-<router-outlet></router-outlet>
+  <div class="movies">
+    <app-movie *ngFor="let movie of movies?.results" [movie]="movie"></app-movie>
+  </div>
+
+  <div class="footer">
+    <button class="pagin" (click)="paginationDown()">Previous</button>
+    <div>Page:{{movies?.page}}</div>
+    <button (click)="paginationUp()">Next</button>
+<!--    <div class="goto">-->
+<!--      <form onSubmit={handleSubmit(submit)}>-->
+<!--        <label><input type="number" {...register('page')}/></label>-->
+<!--        <button>GotoPage</button>-->
+<!--      </form>-->
+<!--    </div>-->
+    <div>Total pages:{{movies?.total_pages}}</div>
+  </div>
+
 </div>

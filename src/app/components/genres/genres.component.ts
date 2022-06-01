@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
-import {Router} from "@angular/router";
+
 // import {IGenre} from "../../interfaces/genre.interface";
 
 @Component({
@@ -13,7 +13,7 @@ export class GenresComponent implements OnInit {
 
   genres: any;
 
-  constructor(private movieService: MovieService, private dataService:DataService, private router:Router) {
+  constructor(private movieService: MovieService, private dataService: DataService) {
   }
 
   ngOnInit(): void {
@@ -21,7 +21,6 @@ export class GenresComponent implements OnInit {
   }
 
   allFunction() {
-    this.dataService.storage.next({id: '', page: ''})
-    this.router.navigate(['movies'])
+    this.dataService.storage.next({pageId: 1, id: ''})
   }
 }

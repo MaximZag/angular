@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IGenre} from "../../interfaces";
-import {Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
 
 @Component({
@@ -11,16 +10,15 @@ import {DataService} from "../../services/data.service";
 export class GenreComponent implements OnInit {
 
   @Input()
-  genre:IGenre
+  genre: IGenre
 
-  constructor(private router:Router, private dataservice:DataService) {
+  constructor(private dataservice: DataService) {
   }
 
   ngOnInit(): void {
   }
 
   switchGenre() {
-    this.dataservice.storage.next({id:this.genre.id, page:''})
-    this.router.navigate(['movies'])
+    this.dataservice.storage.next({pageId: 1, id: this.genre.id})
   }
 }
