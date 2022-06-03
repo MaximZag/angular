@@ -11,6 +11,7 @@ import {MovieComponent} from './components/movie/movie.component';
 import {GenreComponent} from './components/genre/genre.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { Last8Component } from './components/last8/last8.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MoviesComponent,
     MovieComponent,
     GenreComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    Last8Component
   ],
     imports: [
         BrowserModule,

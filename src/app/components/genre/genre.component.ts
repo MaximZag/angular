@@ -20,5 +20,6 @@ export class GenreComponent implements OnInit {
 
   switchGenre() {
     this.dataservice.storage.next({pageId: 1, id: this.genre.id})
+    this.dataservice.name.next(this.genre.name)
   }
 }

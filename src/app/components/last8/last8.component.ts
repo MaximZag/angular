@@ -1,20 +1,19 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IMovie} from "../../interfaces";
-import {Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  selector: 'app-last8',
+  templateUrl: './last8.component.html',
+  styleUrls: ['./last8.component.css']
 })
-export class MovieComponent implements OnInit {
+export class Last8Component implements OnInit {
 
   @Input()
   movie: IMovie
 
-  constructor(private router: Router, private dataService: DataService) {
-  }
+  constructor(private dataService:DataService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -23,15 +22,14 @@ export class MovieComponent implements OnInit {
     let lastseen = this.dataService.last.value;
     if (lastseen.length < 1) {
       lastseen.push(this.movie);
-    } else {
-      lastseen = lastseen.filter(item => item.id !== this.movie.id)
+    } else{
+      lastseen=lastseen.filter(item=>item.id !== this.movie.id)
       lastseen.push(this.movie);
     }
-    if (lastseen.length > 8) {
+    if(lastseen.length>8){
       lastseen.shift()
     }
     this.dataService.last.next(lastseen);
     this.router.navigate([`movies/${this.movie.id}`])
   }
 }
-

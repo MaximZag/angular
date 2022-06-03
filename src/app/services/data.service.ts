@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {IData} from "../interfaces";
+import {IData, IMovie} from "../interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,8 @@ import {IData} from "../interfaces";
 export class DataService {
 
   storage = new BehaviorSubject<IData>({pageId: 1, id: ''});
+  last=new BehaviorSubject<IMovie[]>([]);
+  name =new BehaviorSubject<string>('All Movies');
 
   constructor() {
   }

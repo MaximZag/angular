@@ -14,9 +14,13 @@ export class MoviesComponent implements OnInit {
 
   movies: any;
   form: FormGroup;
+  lastseen: any;
+  name: string;
 
   constructor(private movieService: MovieService, private dataService: DataService) {
     this._createForm();
+    this.dataService.last.subscribe(value => this.lastseen = value)
+    this.dataService.name.subscribe(value => this.name = value)
   }
 
   ngOnInit(): void {
@@ -52,10 +56,10 @@ export class MoviesComponent implements OnInit {
 
   goto(): void {
     let storage = this.dataService.storage.getValue();
-    if (this.form.value.goto && this.form.value.goto<= 500) {
+    if (this.form.value.goto && this.form.value.goto <= 500) {
       this.dataService.storage.next({pageId: this.form.value.goto, id: storage.id});
     }
-      this.form.reset();
+    this.form.reset();
   }
 }
 

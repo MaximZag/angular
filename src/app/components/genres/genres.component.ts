@@ -22,5 +22,6 @@ export class GenresComponent implements OnInit {
 
   allFunction() {
     this.dataService.storage.next({pageId: 1, id: ''})
+    this.dataService.name.next('All Movies')
   }
 }

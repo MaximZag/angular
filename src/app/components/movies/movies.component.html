@@ -4,8 +4,17 @@
     <app-genres></app-genres>
   </div>
 
+  <div class="name">{{name.toUpperCase()}}</div>
+
   <div class="movies">
     <app-movie *ngFor="let movie of movies?.results" [movie]="movie"></app-movie>
+  </div>
+
+  <div class="last5">
+    <div>LAST 8 VIEWED</div>
+    <div class="last5cards">
+      <app-last8 *ngFor="let movie of lastseen" [movie]="movie"></app-last8>
+    </div>
   </div>
 
   <div class="footer">
