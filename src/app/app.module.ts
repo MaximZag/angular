@@ -10,6 +10,7 @@ import {MoviesComponent} from './components/movies/movies.component';
 import {MovieComponent} from './components/movie/movie.component';
 import {GenreComponent} from './components/genre/genre.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,15 +22,16 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
     GenreComponent,
     MovieDetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      {path: '', component: HomeComponent},
-      {path: 'movies', component: MoviesComponent},
-      {path: 'movies/:id', component: MovieDetailsComponent}
-    ])
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot([
+            {path: '', component: HomeComponent},
+            {path: 'movies', component: MoviesComponent},
+            {path: 'movies/:id', component: MovieDetailsComponent}
+        ]),
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

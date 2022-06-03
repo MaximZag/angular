@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 // import {IMovie} from "../../interfaces/movie.interface";
 
@@ -12,8 +13,10 @@ import {DataService} from "../../services/data.service";
 export class MoviesComponent implements OnInit {
 
   movies: any;
+  form: FormGroup;
 
   constructor(private movieService: MovieService, private dataService: DataService) {
+    this._createForm();
   }
 
   ngOnInit(): void {
@@ -39,6 +42,20 @@ export class MoviesComponent implements OnInit {
       down.pageId--
     }
     return this.dataService.storage.next({pageId: down.pageId, id: down.id})
+  }
+
+  _createForm(): void {
+    this.form = new FormGroup({
+      goto: new FormControl(null),
+    })
+  }
+
+  goto(): void {
+    let storage = this.dataService.storage.getValue();
+    if (this.form.value.goto && this.form.value.goto<= 500) {
+      this.dataService.storage.next({pageId: this.form.value.goto, id: storage.id});
+    }
+      this.form.reset();
   }
 }
 

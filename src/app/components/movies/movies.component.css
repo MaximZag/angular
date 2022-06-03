@@ -56,6 +56,14 @@
   margin-left: 5%;
 }
 
+.form {
+  display: flex;
+}
+
+.form button {
+  margin-left: 5%;
+}
+
 .name {
   background: yellow;
   position: absolute;
@@ -69,7 +77,8 @@
   border-radius: 5px;
   margin-left: 50px;
 }
-.last5{
+
+.last5 {
   text-align: center;
   font-weight: bold;
   color: white;
@@ -82,7 +91,8 @@
   height: 81%;
 
 }
-.last5cards{
+
+.last5cards {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
