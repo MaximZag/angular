@@ -1,8 +1,5 @@
-
-
-
-
-<div *ngIf="movie" [style.background-image]="'url(https://image.tmdb.org/t/p/original'+movie.images.backdrops[0].file_path+'?api_key=e77bd741cd0b705c1841df139925cbcd)'"
+<div *ngIf="movie"
+     [style.background-image]="'url(https://image.tmdb.org/t/p/original'+movie.images.backdrops[0].file_path+'?api_key=e77bd741cd0b705c1841df139925cbcd)'"
      class="backimage">
 
   <div class="general">
@@ -20,10 +17,18 @@
     </div>
   </div>
   <div class="h2"><h2>ACTORS</h2></div>
-  <!--<div class="actors">-->
-  <!--  {{movie.casts && movie.casts.cast.filter(actor => actor.profile_path !== null).map(actor => <Actor-->
-  <!--                    key={actor.cast_id} actor={actor}/>)}}-->
-  <!--</div>-->
+
+  <div class="actors">
+    <div *ngFor="let actor of movie?.casts.cast">
+      <div class="actorcard" *ngIf="actor.profile_path">
+        <div>{{actor.name}}</div>
+        <img src="https://image.tmdb.org/t/p/w200{{actor.profile_path}}?api_key=e77bd741cd0b705c1841df139925cbcd"
+             alt=""/>
+        <div>{{actor.character}}</div>
+      </div>
+    </div>
+  </div>
+
   <div class="h2"><h2>IMAGES</h2></div>
   <div class="images">
     <div *ngFor="let image of movie?.images.backdrops">

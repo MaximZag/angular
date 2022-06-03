@@ -2,7 +2,8 @@
 .backimage::-webkit-scrollbar {
   width: 0;
 }
-.backimage{
+
+.backimage {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,7 +59,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   margin-top: 20px;
 }
 
@@ -70,5 +70,17 @@
   margin-left: 45%;
   opacity: 0.9;
   font-size: 30px;
+
+}
+
+.actorcard {
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 
 }
