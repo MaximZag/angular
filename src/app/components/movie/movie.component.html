@@ -1,4 +1,4 @@
-<div class="card">
+<div *ngIf="movie.poster_path" class="card">
   <div class="cardtext">
     <div (click)="getDetails()">
       <img src="https://image.tmdb.org/t/p/w200{{movie?.poster_path}}?api_key=e77bd741cd0b705c1841df139925cbcd" alt=""/>

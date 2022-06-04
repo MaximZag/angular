@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
-import {FormControl, FormGroup} from "@angular/forms";
 
 // import {IMovie} from "../../interfaces/movie.interface";
 

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IMovie} from "../../interfaces";
 import {Router} from "@angular/router";
+
+import {IMovie} from "../../interfaces";
 import {DataService} from "../../services/data.service";
 
 @Component({

@@ -19,14 +19,7 @@
   <div class="h2"><h2>ACTORS</h2></div>
 
   <div class="actors">
-    <div *ngFor="let actor of movie?.casts.cast">
-      <div class="actorcard" *ngIf="actor.profile_path">
-        <div>{{actor.name}}</div>
-        <img src="https://image.tmdb.org/t/p/w200{{actor.profile_path}}?api_key=e77bd741cd0b705c1841df139925cbcd"
-             alt=""/>
-        <div>{{actor.character}}</div>
-      </div>
-    </div>
+    <app-actor *ngFor="let actor of movie?.casts.cast" [actor]="actor"></app-actor>
   </div>
 
   <div class="h2"><h2>IMAGES</h2></div>
@@ -36,7 +29,5 @@
            alt=""/>
     </div>
   </div>
-  <!--<Link to={'/movies'}>-->
-  <!--<button className={'backhome'} onClick={() => back(pageId)}>Back to All Movies</button>-->
-  <!--</Link>-->
+  <button class="backhome" (click)="back()">Back to All Movies</button>
 </div>

@@ -1,24 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
-// import {IMovie} from "../../interfaces";
+// import {IActor} from "../../interfaces/actor.interface";
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
 
 @Component({
-  selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.css']
+  selector: 'app-actorpage',
+  templateUrl: './actorpage.component.html',
+  styleUrls: ['./actorpage.component.css']
 })
-export class MovieDetailsComponent implements OnInit {
+export class ActorpageComponent implements OnInit {
 
-  movie: any;
+  actor:any
 
   constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService, private dataService:DataService, private router:Router) {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => this.movieService.getOneMovie(id).subscribe(value => this.movie = value))
+
+    this.activatedRoute.params.subscribe(({id}) => this.movieService.getOneActor(id).subscribe(value => this.actor=value))
   }
 
   back() {

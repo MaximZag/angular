@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
-
 // import {IGenre} from "../../interfaces/genre.interface";
 
 @Component({

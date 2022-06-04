@@ -1,0 +1,19 @@
+<div *ngIf="actor" class="actormain">
+  <div class="actorgeneral">
+    <div class="left">
+      <img src="https://image.tmdb.org/t/p/w500{{actor.profile_path}}?api_key=e77bd741cd0b705c1841df139925cbcd"
+           alt=""/>
+    </div>
+    <div class="right">
+      <h1>{{actor.name}}</h1>
+      <div>{{actor.birthday}}</div>
+      <div class="bio">{{actor.biography}}</div>
+      <div>Rating:{{actor.popularity}}</div>
+    </div>
+  </div>
+  <div class="h2"><h2>Movies</h2></div>
+  <div class="actors">
+    <app-movie *ngFor="let movie of actor.movie_credits.cast" [movie]="movie"></app-movie>
+  </div>
+    <button class="backhome" (click)="back()">Back to All Movies</button>
+</div>
