@@ -3,8 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
-
-// import {IMovie} from "../../interfaces/movie.interface";
+import {IResults} from "../../interfaces";
 
 @Component({
   selector: 'app-movies',
@@ -13,7 +12,7 @@ import {DataService} from "../../services/data.service";
 })
 export class MoviesComponent implements OnInit {
 
-  movies: any;
+  movies: IResults;
   form: FormGroup;
   lastseen: any;
   name: string;
@@ -26,7 +25,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.storage.subscribe(value => {
-      this.movieService.getAllMovies(value.pageId, value.id).subscribe(value => this.movies = value)
+      this.movieService.getAllMovies(value.pageId, value.id).subscribe(value => this.movies=value)
     })
   }
 

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {MovieService} from "../../services";
 import {DataService} from "../../services/data.service";
+import {IGenreResults} from "../../interfaces";
 // import {IGenre} from "../../interfaces/genre.interface";
 
 @Component({
@@ -11,7 +12,7 @@ import {DataService} from "../../services/data.service";
 })
 export class GenresComponent implements OnInit {
 
-  genres: any;
+  genres: IGenreResults;
 
   constructor(private movieService: MovieService, private dataService: DataService) {
   }

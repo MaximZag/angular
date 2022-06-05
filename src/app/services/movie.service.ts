@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {IGenre} from "../interfaces";
+import {IGenreResults, IResults} from "../interfaces";
 import {urls} from "../constants";
 import {IMovie} from "../interfaces";
 import {IActor} from "../interfaces/actor.interface";
@@ -15,12 +15,12 @@ export class MovieService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllGenres(): Observable<IGenre[]> {
-    return this.httpClient.get<IGenre[]>(urls.genres)
+  getAllGenres(): Observable<IGenreResults> {
+    return this.httpClient.get<IGenreResults>(urls.genres)
   }
 
-  getAllMovies(page: number, id: string): Observable<IMovie[]> {
-    return this.httpClient.get<IMovie[]>(urls.movies + `&page=${page}&with_genres=${id}`)
+  getAllMovies(page: number, id: string): Observable<IResults> {
+    return this.httpClient.get<IResults>(urls.movies + `&page=${page}&with_genres=${id}`)
   }
 
   getOneMovie(id: string): Observable<IMovie> {

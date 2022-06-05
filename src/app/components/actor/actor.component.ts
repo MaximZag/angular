@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {Router} from "@angular/router";
-// import {IActor} from "../../interfaces/actor.interface";
 
 @Component({
   selector: 'app-actor',
