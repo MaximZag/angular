@@ -14,6 +14,7 @@ export class MovieComponent implements OnInit {
   @Input()
   movie: IMovie
 
+
   constructor(private router: Router, private dataService: DataService) {
   }
 
@@ -34,5 +35,6 @@ export class MovieComponent implements OnInit {
     this.dataService.last.next(lastseen);
     this.router.navigate([`movies/${this.movie.id}`])
   }
+
 }
 
